@@ -1,11 +1,12 @@
 <header>
-  <nav id="menu">
-    <ul>
-      <li (click)="changePage('main')" >Main</li>
-      <li (click)="changePage('shop')">Shop</li>
-      <li (click)="changePage('cart')">Cart</li>
-      <li (click)="changePage('login')">{{isLoggedIn()?"Log out" :"Log in"}}</li>
-      <li (click)="changePage('registration')"  *ngIf="!isLoggedIn()">Register</li>
-    </ul>
-  </nav>
+    <nav id="menu">
+        <ul>
+            <li (click)="changePage('main')">Main</li>
+            <li (click)="changePage('shop')">Shop</li>
+            <li (click)="changePage('cart')">Cart</li>
+            <li (click)="changePage('login')">{{isLoggedIn() ? "Log out" : "Log in"}}</li>
+            <li (click)="changePage('registration')" *ngIf="!isLoggedIn()">Register</li>
+            <li (click)="changePage('account')" *ngIf="isLoggedIn()"></li>
+        </ul>
+    </nav>
 </header>

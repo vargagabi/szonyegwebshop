@@ -23,9 +23,6 @@ export class MenuComponent implements OnInit {
   changePage(page: string): void{
       this.testoutput.emit(page);
       this.router.navigateByUrl(page);
-      if(page ==='login'){
-        this.loggedIn = !this.loggedIn;
-      }
   }
 
   isLoggedIn() {
