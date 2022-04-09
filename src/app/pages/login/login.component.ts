@@ -1,7 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Location} from "@angular/common";
 import {Router} from "@angular/router";
+import {AuthService} from "../../shared/services/auth.service";
 
 @Component({
     selector: 'app-login',
@@ -11,11 +12,11 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
 
     loginForm = new FormGroup({
-        email: new FormControl(''),
-        password: new FormControl('')
+        email: new FormControl('', [Validators.required, Validators.minLength(1), Validators.email]),
+        password: new FormControl('', [Validators.required, Validators.minLength(1)])
     })
 
-    constructor(private location: Location, private router: Router) {
+    constructor(private location: Location, private router: Router, private auth: AuthService) {
     }
 
     ngOnInit(): void {
@@ -23,8 +24,19 @@ export class LoginComponent implements OnInit {
 
     //bejelentkezes kezelese
     onSubmit(): void {
-        //TODO: firebase bejelentkezes
-
+        if (this.loginForm.valid) {
+            this.auth.login(this.loginForm.value.email, this.loginForm.value.password)
+                .then(cred => {
+                    console.log("sikeres bejelentkezes");
+                    this.router.navigateByUrl("/main");
+                })
+                .catch(error => {
+                    console.error(error);
+                })
+                .finally();
+        }else{
+            alert("Sikertelen bejelentkezes.");
+        }
     }
 
     onCancel(): void {

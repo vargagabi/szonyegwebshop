@@ -1,31 +1,30 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Router} from "@angular/router";
+import {AuthService} from "../services/auth.service";
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+    selector: 'app-menu',
+    templateUrl: './menu.component.html',
+    styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+    @Input() loggedIn: boolean;
 
-  currentPage: string;
-  loggedIn: boolean;
-  @Output() testoutput: EventEmitter<string> = new EventEmitter<string>();
+    constructor(private router: Router, private auth: AuthService) {
+        this.loggedIn = false;
+    }
 
+    ngOnInit(): void {
 
-  constructor(private router: Router) {
-    this.currentPage = 'main';
-    this.loggedIn = false;
-  }
+    }
 
-  ngOnInit(): void {
-  }
-  changePage(page: string): void{
-      this.testoutput.emit(page);
-      this.router.navigateByUrl(page);
-  }
+    onLogout(){
+        this.auth.logout().then(m=>{
+            console.log("Successful logout");
+            this.router.navigateByUrl("/login");
+        }).catch(error=>{
+            console.error(error);
+        });
+    }
 
-  isLoggedIn() {
-    return this.loggedIn;
-  }
 }
