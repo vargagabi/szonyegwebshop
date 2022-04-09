@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'main',
     loadChildren: () => import('./pages/main/main.module').then(m => m.MainModule),
   },
   {
@@ -24,6 +24,17 @@ const routes: Routes = [
     path: 'registration',
     loadChildren: ()=> import('./pages/registration/registration.module').then(m=>m.RegistrationModule),
   },
+  {
+    path:'not-found',
+    loadChildren: ()=> import('./pages/not-found/not-found.module').then(m=>m.NotFoundModule),
+
+  },
+  {
+    path: '',
+    redirectTo: '/main',
+    pathMatch: 'full'
+  },
+
   {
     path: '**',
     loadChildren: ()=> import('./pages/not-found/not-found.module').then(m=>m.NotFoundModule),

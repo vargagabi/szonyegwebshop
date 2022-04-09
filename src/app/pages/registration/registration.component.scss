@@ -1,0 +1,30 @@
+
+form{
+  position: relative;
+  margin: 25px auto;
+  border: 2px solid black;
+  width: 25%;
+  height: auto;
+  background: #d9d5d5;
+}
+h2{
+  position: relative;
+  margin: auto;
+}
+div{
+  display: flex;
+  margin: 10px;
+  align-self: center;
+}
+.column{
+  position: relative;
+  display: flex;
+  float:left;
+  width:50%;
+}
+form div:last-child  input{
+  float:none;
+  display: inline;
+  margin: 0 auto;
+  width:25%;
+}

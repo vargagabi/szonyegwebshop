@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'szonyegwebshop';
+
+  testoutputevent(variable: string) {
+    console.log(variable);
+  }
 }
