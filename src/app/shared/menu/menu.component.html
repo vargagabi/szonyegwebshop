@@ -1,13 +1,12 @@
-<header>
-    <nav id="menu">
-        <ul>
-            <li routerLink="/main">Main</li>
-            <li routerLink="/shop">Shop</li>
-            <li routerLink="/cart">Cart</li>
-            <li routerLink="/login" *ngIf="!loggedIn">Log in</li>
-            <li (click)="onLogout()" *ngIf="loggedIn">Log out</li>
-            <li routerLink="/registration" *ngIf="!loggedIn">Register</li>
-            <li routerLink="/account">Account</li>
-        </ul>
-    </nav>
-</header>
+<mat-nav-list>
+    <a (click)="onCloseSideNav.emit(true)" mat-list-item routerLink="/main"><mat-icon>homee</mat-icon><span>Fooldal</span></a>
+    <a (click)="onCloseSideNav.emit(true)" mat-list-item routerLink="/shop"><mat-icon>shopping_basket</mat-icon><span>Termekek</span></a>
+    <a (click)="onCloseSideNav.emit(true)" mat-list-item routerLink="/cart"><mat-icon>shopping_cart</mat-icon><span>Kosar</span></a>
+    <a (click)="onCloseSideNav.emit(true)" mat-list-item routerLink="/login" *ngIf="!loggedIn"><mat-icon>login</mat-icon><span>Bejelentkezes</span></a>
+    <a (click)="onCloseSideNav.emit(true)" mat-list-item (click)="onLogout()" *ngIf="loggedIn"><mat-icon>logout</mat-icon><span>Kijelentkezes</span></a>
+    <a (click)="onCloseSideNav.emit(true)" mat-list-item routerLink="/registration" *ngIf="!loggedIn"><mat-icon>app_registration</mat-icon><span>Regisztracio</span></a>
+    <a (click)="onCloseSideNav.emit(true)" mat-list-item routerLink="/account">
+        <mat-icon>account_circle</mat-icon>
+        <span>Fiok</span>
+    </a>
+</mat-nav-list>

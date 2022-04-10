@@ -1,34 +1,42 @@
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-  <div>
-    <h2>Registration form</h2>
-  </div>
-  <div>
-    <label [ngClass]="'column'" for="lastName">Vezeteknev</label>
-    <input formControlName="lastName" [ngClass]="'column'" type="text" id="lastName" placeholder="Vezeteknev">
-  </div>
-  <div>
-    <label [ngClass]="'column'" for="firstName">Keresztnev</label>
-    <input formControlName="firstName" [ngClass]="'column'" type="text" id="firstName" placeholder="Keresztev">
-  </div>
-  <div>
-    <label [ngClass]="'column'" for="email">Email</label>
-    <input formControlName="email" [ngClass]="'column'" type="email" id="email" placeholder="emailcim@email.hu">
-  </div>
-  <div>
-    <label [ngClass]="'column'" for="phoneNumber">Phone number</label>
-    <input formControlName="phoneNumber" [ngClass]="'column'" type="tel" id="phoneNumber" placeholder="70/1234567">
-  </div>
-  <div>
-    <label [ngClass]="'column'" for="password">Password</label>
-    <input formControlName="password" [ngClass]="'column'" autocomplete="off" type="password" id="password" placeholder="Jelszo">
-  </div>
-  <div>
-    <label [ngClass]="'column'" for="passwordRepeat">Password again</label>
-    <input formControlName="passwordRepeat" [ngClass]="'column'" autocomplete="off" type="password" id="passwordRepeat" placeholder="Jelszo ujra">
-  </div>
-  <div>
-    <input [ngClass]="'column'" type="submit" value="Ok">
-    <input (click)="onCancel()" [ngClass]="'column'" type="button" value="Vissza" >
-  </div>
-</form>
-
+<main>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div>
+            <h2>Registration form</h2>
+        </div>
+        <mat-form-field>
+            <mat-label [ngClass]="'column'" for="lastName">Vezeteknev</mat-label>
+            <input matInput formControlName="lastName" [ngClass]="'column'" type="text" id="lastName"
+                   placeholder="Vezeteknev">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label [ngClass]="'column'" for="firstName">Keresztnev</mat-label>
+            <input matInput formControlName="firstName" [ngClass]="'column'" type="text" id="firstName"  placeholder="Keresztev">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label [ngClass]="'column'" >Email</mat-label>
+            <input matInput formControlName="email" [ngClass]="'column'" type="email" id="email" placeholder="emailcim@email.hu">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label [ngClass]="'column'" for="phoneNumber">Phone number</mat-label>
+            <input matInput formControlName="phoneNumber" [ngClass]="'column'" type="tel" id="phoneNumber"
+                   placeholder="70/1234567">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label [ngClass]="'column'" for="password">Password</mat-label>
+            <input matInput formControlName="password" [ngClass]="'column'" autocomplete="off" type="password"
+                   id="password"
+                   placeholder="Jelszo">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label [ngClass]="'column'" for="passwordRepeat">Password again</mat-label>
+            <input matInput formControlName="passwordRepeat" [ngClass]="'column'" autocomplete="off" type="password"
+                   id="passwordRepeat" placeholder="Jelszo ujra">
+        </mat-form-field>
+        <div>
+            <button mat-raised-button color="primary" [ngClass]="'column'" type="submit" value="Ok">Ok</button>
+            <button mat-raised-button color="accent" (click)="onCancel()" [ngClass]="'column'" type="button"
+                    value="Vissza">Megse
+            </button>
+        </div>
+    </form>
+</main>

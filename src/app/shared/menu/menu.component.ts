@@ -9,6 +9,7 @@ import {AuthService} from "../services/auth.service";
 })
 export class MenuComponent implements OnInit {
     @Input() loggedIn: boolean;
+    @Output() onCloseSideNav: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     constructor(private router: Router, private auth: AuthService) {
         this.loggedIn = false;

@@ -1,36 +1,17 @@
-header{
-  position: sticky;
-  margin: 0 auto;
-  padding:0;
-  top: 0;
+mat-nav-list{
+    width: 150px;
+    padding: 0;
 }
-#menu ul{
-  top:0;
-  display: flex;
-  list-style: none;
-  margin: 0 auto;
-  width: 70%;
-  height: 50px;
-  padding:0;
+a{
+    text-decoration: none;
 }
-#menu li {
-  background: red;
-  top: 0;
-  padding: 0;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  float: left;
-  margin: 0;
-  width: 100%;
-  user-select: none;
+span{
+    user-select: none;
 }
-#menu li:first-child{
-  border-bottom-left-radius: 15px;
+mat-icon{
+    user-select:none;
 }
-#menu li:last-child{
-  border-bottom-right-radius: 15px;
+a:hover{
+    background: lightgray;
 }
-#menu li:hover{
-  background: darkred;
-}
+

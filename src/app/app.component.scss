@@ -1,1 +1,42 @@
+$primary: #3f51b5;
+$primary_dark: #36479f;
 
+mat-sidenav-container{
+    height:100%;
+    background: ghostwhite;
+}
+mat-toolbar{
+    position:relative;
+    padding: 0 0 0 10px ;
+    height: 45px;
+    margin:0;
+    width: 100%;
+}
+#menu{
+    width:100%;
+    height: 100%;
+    padding: 0 0;
+    margin: 0 0;
+}
+ul{
+    list-style: none;
+    margin: 0 0;
+    width: 100%;
+    height: 100%;
+    padding:0;
+}
+li {
+    background: $primary;
+    top: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 0;
+    width: 100px;
+    user-select: none;
+}
+ul li:hover{
+    background: $primary_dark;
+    color: lightgray;
+}

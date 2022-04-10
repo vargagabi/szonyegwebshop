@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "szonyegwebshop": {
+      "hosting": {
+        "szonyegwebshop": [
+          "szonyegwebshop"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "szonyegwebshop"
+  }
+}

@@ -1,17 +1,23 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  <div>
-    <h2>Bejelentkezes</h2>
-  </div>
-  <div>
-    <label class="column" for="email">Email</label>
-    <input class="column" type="email" id="email" placeholder="emailcim@email.hu" formControlName="email">
-  </div>
-  <div>
-    <label class="column" for="password">Password</label>
-    <input class="column" type="password" id="password" autocomplete="on" placeholder="Jelszo" formControlName="password">
-  </div>
-  <div>
-    <input class="column" type="submit" value="Bejelentkezes">
-    <input class="column" type="button" value="Vissza" (click)="onCancel()">
-  </div>
-</form>
+<main id="main">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div>
+            <h2>
+                Bejelentkezes
+            </h2>
+        </div>
+        <mat-form-field>
+            <mat-label class="column">Email</mat-label>
+            <input matInput class="column" type="email" id="email" placeholder="emailcim@email.hu"
+                   formControlName="email">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label class="column">Password</mat-label>
+            <input matInput class="column" type="password" id="password" autocomplete="on" placeholder="Jelszo"
+                   formControlName="password">
+        </mat-form-field>
+        <div>
+            <button mat-raised-button color="primary" class="column" type="submit" value="Bejelentkezes">Ok</button>
+            <button mat-raised-button color="accent" class="column" type="button" value="Vissza" (click)="onCancel()">Megse</button>
+        </div>
+    </form>
+</main>
