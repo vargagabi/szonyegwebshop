@@ -1,12 +1,12 @@
 <mat-nav-list>
-    <a (click)="onCloseSideNav.emit(true)" mat-list-item routerLink="/main"><mat-icon>homee</mat-icon><span>Fooldal</span></a>
-    <a (click)="onCloseSideNav.emit(true)" mat-list-item routerLink="/shop"><mat-icon>shopping_basket</mat-icon><span>Termekek</span></a>
-    <a (click)="onCloseSideNav.emit(true)" mat-list-item routerLink="/cart"><mat-icon>shopping_cart</mat-icon><span>Kosar</span></a>
-    <a (click)="onCloseSideNav.emit(true)" mat-list-item routerLink="/login" *ngIf="!loggedIn"><mat-icon>login</mat-icon><span>Bejelentkezes</span></a>
-    <a (click)="onCloseSideNav.emit(true)" mat-list-item (click)="onLogout()" *ngIf="loggedIn"><mat-icon>logout</mat-icon><span>Kijelentkezes</span></a>
-    <a (click)="onCloseSideNav.emit(true)" mat-list-item routerLink="/registration" *ngIf="!loggedIn"><mat-icon>app_registration</mat-icon><span>Regisztracio</span></a>
+    <a (click)="onCloseSideNav.emit(true)" mat-list-item routerLink="/main"><mat-icon>home</mat-icon><span>Főoldal</span></a>
+    <a (click)="onCloseSideNav.emit(true)" mat-list-item routerLink="/shop"><mat-icon>shopping_basket</mat-icon><span>Termékek</span></a>
+    <a (click)="onCloseSideNav.emit(true)" mat-list-item routerLink="/cart"><mat-icon>shopping_cart</mat-icon><span>Kosár</span></a>
+    <a (click)="onCloseSideNav.emit(true)" mat-list-item routerLink="/login" *ngIf="!loggedIn"><mat-icon>login</mat-icon><span>Bejelentkezés</span></a>
+    <a (click)="onCloseSideNav.emit(true)" mat-list-item (click)="onLogout()" *ngIf="loggedIn"><mat-icon>logout</mat-icon><span>Kijelentkezés</span></a>
+    <a (click)="onCloseSideNav.emit(true)" mat-list-item routerLink="/registration" *ngIf="!loggedIn"><mat-icon>app_registration</mat-icon><span>Regisztrácio</span></a>
     <a (click)="onCloseSideNav.emit(true)" mat-list-item routerLink="/account">
         <mat-icon>account_circle</mat-icon>
-        <span>Fiok</span>
+        <span>Fiók</span>
     </a>
 </mat-nav-list>

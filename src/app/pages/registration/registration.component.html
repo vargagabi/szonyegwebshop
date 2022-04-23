@@ -4,39 +4,37 @@
             <h2>Registration form</h2>
         </div>
         <mat-form-field>
-            <mat-label [ngClass]="'column'" for="lastName">Vezeteknev</mat-label>
+            <mat-label [ngClass]="'column'" for="lastName">Vezetéknév</mat-label>
             <input matInput formControlName="lastName" [ngClass]="'column'" type="text" id="lastName"
-                   placeholder="Vezeteknev">
+                   placeholder="Vezetéknév">
         </mat-form-field>
         <mat-form-field>
-            <mat-label [ngClass]="'column'" for="firstName">Keresztnev</mat-label>
-            <input matInput formControlName="firstName" [ngClass]="'column'" type="text" id="firstName"  placeholder="Keresztev">
+            <mat-label [ngClass]="'column'" for="firstName">Keresztnév</mat-label>
+            <input matInput formControlName="firstName" [ngClass]="'column'" type="text" id="firstName"  placeholder="Keresztnév">
         </mat-form-field>
         <mat-form-field>
             <mat-label [ngClass]="'column'" >Email</mat-label>
             <input matInput formControlName="email" [ngClass]="'column'" type="email" id="email" placeholder="emailcim@email.hu">
         </mat-form-field>
         <mat-form-field>
-            <mat-label [ngClass]="'column'" for="phoneNumber">Phone number</mat-label>
+            <mat-label [ngClass]="'column'" for="phoneNumber">Telefonszám</mat-label>
             <input matInput formControlName="phoneNumber" [ngClass]="'column'" type="tel" id="phoneNumber"
                    placeholder="70/1234567">
         </mat-form-field>
         <mat-form-field>
-            <mat-label [ngClass]="'column'" for="password">Password</mat-label>
+            <mat-label [ngClass]="'column'" for="password">Jelszó</mat-label>
             <input matInput formControlName="password" [ngClass]="'column'" autocomplete="off" type="password"
                    id="password"
-                   placeholder="Jelszo">
+                   placeholder="Jelszó">
         </mat-form-field>
         <mat-form-field>
-            <mat-label [ngClass]="'column'" for="passwordRepeat">Password again</mat-label>
+            <mat-label [ngClass]="'column'" for="passwordRepeat">Jelszó újra</mat-label>
             <input matInput formControlName="passwordRepeat" [ngClass]="'column'" autocomplete="off" type="password"
-                   id="passwordRepeat" placeholder="Jelszo ujra">
+                   id="passwordRepeat" placeholder="Jelszó újra">
         </mat-form-field>
         <div>
-            <button mat-raised-button color="primary" [ngClass]="'column'" type="submit" value="Ok">Ok</button>
-            <button mat-raised-button color="accent" (click)="onCancel()" [ngClass]="'column'" type="button"
-                    value="Vissza">Megse
-            </button>
+            <button mat-raised-button color="primary" [ngClass]="'column'" type="submit" value="Ok">Regisztráció</button>
+            <button mat-raised-button color="accent" (click)="onCancel()" [ngClass]="'column'" type="button" value="Vissza">Mégse</button>
         </div>
     </form>
 </main>

@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
                 })
                 .finally();
         }else{
-            alert("Sikertelen bejelentkezes.");
+            alert("Sikertelen bejelentkezés.");
         }
     }
 

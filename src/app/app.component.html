@@ -7,16 +7,16 @@
             <button mat-icon-button fxHide.gt-sm>
                 <mat-icon (click)="onSidenav(sidenav)">menu</mat-icon>
             </button>
-            <div>Szonyeg Webshop</div>
+            <div>Szőnyeg webshop</div>
             <div id="menu" fxFlex  fxLayout fxLayoutAlign="flex-end" fxHide.lt-md >
                 <ul fxLayout fxLayoutAlign="flex-end">
-                    <li routerLink="/main">Main</li>
-                    <li routerLink="/shop">Shop</li>
-                    <li routerLink="/cart">Cart</li>
-                    <li routerLink="/login" *ngIf="!(loggedInUser!==null)">Log in</li>
-                    <li (click)="onLogout()" *ngIf="(loggedInUser!==null)">Log out</li>
-                    <li routerLink="/registration" *ngIf="!(loggedInUser!==null)">Register</li>
-                    <li routerLink="/account">Account</li>
+                    <li routerLink="/main">Főoldal</li>
+                    <li routerLink="/shop">Termékek</li>
+                    <li routerLink="/cart">Kosár</li>
+                    <li routerLink="/login" *ngIf="!(loggedInUser!==null)">Bejelentkezés</li>
+                    <li (click)="onLogout()" *ngIf="(loggedInUser!==null)">Kijelentkezés</li>
+                    <li routerLink="/registration" *ngIf="!(loggedInUser!==null)">Regisztráció</li>
+                    <li routerLink="/account">Fiók</li>
                 </ul>
             </div>
         </mat-toolbar>

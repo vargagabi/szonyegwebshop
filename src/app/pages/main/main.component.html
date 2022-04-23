@@ -1,20 +1,23 @@
 <main style="height: 100%; position: relative;">
-    <h1>Szonyeg webshop</h1>
-    <h2>{{currentUser | connectString}}</h2>
-    <h2>Comments</h2>
-    <div id="addComment" fxLayout="column">
-        <h3>Add comment</h3>
+    <div id="header" fxLayout="column">
+        <h1>Szőnyeg webshop</h1>
+        <h2>{{currentUser | connectString}}</h2>
+        <h2>Hozzászólások</h2>
+
+    </div>
+    <div id="addComment" fxLayout="column" *ngIf="currentUser">
+        <h3>Hozzászólás írása</h3>
         <mat-form-field>
-            <mat-label for="comment">Comment</mat-label>
-            <textarea  rows="5" matInput [formControl]="comment" type="text" name="comment"  placeholder="Write your comment here..."></textarea>
+            <mat-label for="comment">Hozzászólás</mat-label>
+            <textarea  rows="5"  wrap="hard" maxlength="200" matInput [formControl]="comment" name="comment"  placeholder="Ide írj..."></textarea>
         </mat-form-field>
-        <button mat-raised-button (click)="onAddComment()" color="primary"  type="button">Comment</button>
+        <button mat-raised-button (click)="onAddComment()" color="primary"  type="button">Küldés</button>
     </div>
     <div id="comments" fxLayout="row wrap" fxLayoutGap="20px">
         <mat-card *ngFor="let comment of commentArray">
             <div fxLayout="column">
                 <mat-card-header>
-                    <mat-card-title>Commenter: {{comment.userEmail}}</mat-card-title>
+                    <mat-card-title>Írta: {{comment.userEmail}}</mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
                     <p>{{comment.comment}}</p>

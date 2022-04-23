@@ -33,7 +33,7 @@ export class RegistrationComponent implements OnInit {
         if (this.registerForm.valid && this.registerForm.value.password === this.registerForm.value.passwordRepeat) {
                 this.auth.register(this.registerForm.value.email, this.registerForm.value.password)
                     .then(cred => {
-                        alert("Sikeres regisztracio, kerlek jelentkezz be!");
+                        alert("Sikeres regisztráció, kérlek jelentkezz be!");
                         const user: User = {
                             id: cred.user?.uid as string,
                             lastName: this.registerForm.value.lastName,
@@ -54,7 +54,7 @@ export class RegistrationComponent implements OnInit {
                         console.error(error);
                     });
         }else{
-            alert("Hiba!\nMinden mezo kitoltese kotelezo!\nA jelszavaknak meg kell egyeznie.\nA telefonszam legalabb 7 szamjegy legyen.");
+            alert("Hiba!\nMinden mező kitőltése kötelező!\nA jelszavaknak meg kell egyeznie.\nA telefonszam legalább 7 számjegy legyen.");
         }
     }
 

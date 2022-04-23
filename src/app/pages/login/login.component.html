@@ -2,7 +2,7 @@
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div>
             <h2>
-                Bejelentkezes
+                Bejelentkezés
             </h2>
         </div>
         <mat-form-field>
@@ -11,13 +11,13 @@
                    formControlName="email">
         </mat-form-field>
         <mat-form-field>
-            <mat-label class="column">Password</mat-label>
-            <input matInput class="column" type="password" id="password" autocomplete="on" placeholder="Jelszo"
+            <mat-label class="column">Jelszó</mat-label>
+            <input matInput class="column" type="password" id="password" autocomplete="on" placeholder="Jelszó"
                    formControlName="password">
         </mat-form-field>
         <div>
-            <button mat-raised-button color="primary" class="column" type="submit" value="Bejelentkezes">Ok</button>
-            <button mat-raised-button color="accent" class="column" type="button" value="Vissza" (click)="onCancel()">Megse</button>
+            <button mat-raised-button color="primary" class="column" type="submit" value="Bejelentkezes">Belépés</button>
+            <button mat-raised-button color="accent" class="column" type="button" value="Vissza" (click)="onCancel()">Mégse</button>
         </div>
     </form>
 </main>

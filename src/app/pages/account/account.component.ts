@@ -22,7 +22,6 @@ export class AccountComponent implements OnInit, OnDestroy {
         this.subs = this.authService.getLoggedInUser().subscribe(user=>{
             this.userService.getUserByEmail(user?.email).subscribe(data=>{
                 this.currentUser = data[0];
-                console.log(this.currentUser);
             })
         })
 

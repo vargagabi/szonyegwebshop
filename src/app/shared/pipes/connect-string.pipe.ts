@@ -7,7 +7,7 @@ export class ConnectStringPipe implements PipeTransform {
 
 
     transform(value: any): any {
-        return  "Welcome to my webshop, " + (value || 'guest') + "!\n" +(value? "As a registered user you can view my wares and put them in your cart.\n" :'');
+        return  "Köszöntelek online üzletemben, " + (value || 'guest') + "!\n" +(value? "Mint regisztrált felhasználó megnézheted az áruimat, és akár a kosaradba is rakhatod őket.\n" :'');
     }
 
 }
