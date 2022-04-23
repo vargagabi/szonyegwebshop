@@ -1,5 +1,29 @@
 <main style="height: 100%; position: relative;">
     <h1>Szonyeg webshop</h1>
-    <p>Welcome to my little webshop. You can browse my wares without an account, but to actually buy anything you will need to register!</p>
+    <h2>{{currentUser | connectString}}</h2>
+    <h2>Comments</h2>
+    <div id="addComment" fxLayout="column">
+        <h3>Add comment</h3>
+        <mat-form-field>
+            <mat-label for="comment">Comment</mat-label>
+            <textarea  rows="5" matInput [formControl]="comment" type="text" name="comment"  placeholder="Write your comment here..."></textarea>
+        </mat-form-field>
+        <button mat-raised-button (click)="onAddComment()" color="primary"  type="button">Comment</button>
+    </div>
+    <div id="comments" fxLayout="row wrap" fxLayoutGap="20px">
+        <mat-card *ngFor="let comment of commentArray">
+            <div fxLayout="column">
+                <mat-card-header>
+                    <mat-card-title>Commenter: {{comment.userEmail}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>{{comment.comment}}</p>
+                </mat-card-content>
+                <mat-card-footer>
+                    <p>{{comment.postDate}}</p>
+                </mat-card-footer>
+            </div>
+        </mat-card>
 
+    </div>
 </main>

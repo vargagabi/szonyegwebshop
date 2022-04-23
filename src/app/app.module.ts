@@ -26,7 +26,7 @@ import {MatCardModule} from "@angular/material/card";
         AppComponent,
         MenuComponent,
         FooterComponent,
-        AccountComponent
+        AccountComponent,
     ],
     imports: [
         BrowserModule,

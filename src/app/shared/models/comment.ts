@@ -1,6 +1,5 @@
-export interface Comment{
-    id: number,
-    user_id: number,
-    comment: string
-    postDate: Date
+export interface ShopComment{
+    userEmail: string,
+    comment: string,
+    postDate: string
 }

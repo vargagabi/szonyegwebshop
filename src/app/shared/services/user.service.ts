@@ -19,11 +19,12 @@ export class UserService {
     getAll(){
         return this.afs.collection<User>(this.collectionName).valueChanges();
     }
-    update(){
-
+    update(user: User){
+        return this.afs.collection<User>(this.collectionName).doc(user.id).set(user);
     }
 
     getUserByEmail(email: string | null | undefined){
         return this.afs.collection<User>(this.collectionName, ref =>ref.where('email','==',email)).valueChanges()
     }
+
 }

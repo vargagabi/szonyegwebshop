@@ -2,21 +2,20 @@
     <div>
     <h1>Shop Page</h1>
     <div  fxLayout="row wrap" fxLayoutGap="20px">
-        <mat-card *ngFor="let obj of carpetArray" >
-
+        <mat-card *ngFor="let obj of carpetArray "  >
             <mat-card-header>
                 <mat-card-title>{{obj.name}}</mat-card-title>
             </mat-card-header>
 
             <mat-card-content fxLayout="column">
-                    <img [src]="obj.imageUrlFS">
-                    <p>Price: </p>
-                    <p>Width: {{obj.width}}</p>
-                    <p>Height: {{obj.height}}</p>
+                    <img mat-card-image [src]="obj.imageUrlFS">
+                    <p>Price: {{obj.price}} Ft</p>
+                    <p>Width: {{obj.width}} cm</p>
+                    <p>Height: {{obj.height}} cm</p>
             </mat-card-content>
 
             <mat-card-actions fxLayout>
-                    <button (click)="addToCart(obj)">Add</button>
+                    <button mat-raised-button color="primary" (click)="addToCart(obj)">Add</button>
             </mat-card-actions>
 
         </mat-card>
