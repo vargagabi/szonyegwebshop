@@ -1,7 +1,7 @@
 <main>
     <div>
     <h1>Shop Page</h1>
-    <div  fxLayout fxLayoutGap="20px">
+    <div  fxLayout="row wrap" fxLayoutGap="20px">
         <mat-card *ngFor="let obj of carpetArray" >
 
             <mat-card-header>
@@ -16,7 +16,7 @@
             </mat-card-content>
 
             <mat-card-actions fxLayout>
-                    <button mat-raised-button>Add</button>
+                    <button (click)="addToCart(obj)">Add</button>
             </mat-card-actions>
 
         </mat-card>

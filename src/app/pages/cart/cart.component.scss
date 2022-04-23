@@ -1,0 +1,46 @@
+main{
+    width: 100%;
+    height: auto;
+}
+div{
+    position: relative;
+    padding: 5px 5px;
+    width: auto;
+    height: 100%;
+}
+mat-card{
+    width: 15%;
+    margin: 10px;
+    height:auto;
+}
+mat-card-header{
+    width:100%;
+    margin:auto;
+}
+mat-card-content{
+    width:100%;
+    height:auto;
+    margin:0 auto;
+}
+img{
+    width:150px;
+    margin: 20px auto;
+}
+h1{
+    margin:10px auto;
+}
+mat-card-actions{
+    width:100%;
+    bottom:0;
+    margin: 0 auto;
+}
+span{
+    width:100%;
+    border-top:2px solid black;
+    padding: 5px;
+}
+
+button{
+    margin:0 auto;
+    width:100%;
+}

@@ -1,6 +1,9 @@
 import {Component, OnChanges, OnInit} from '@angular/core';
 import {CarpetService} from "../../shared/services/carpet.service";
 import {Carpet} from "../../shared/models/carpet";
+import {MatButton} from "@angular/material/button";
+import {CartService} from "../../shared/services/cart.service";
+import {AuthService} from "../../shared/services/auth.service";
 
 @Component({
     selector: 'app-shop',
@@ -10,8 +13,9 @@ import {Carpet} from "../../shared/models/carpet";
 export class ShopComponent implements OnInit {
 
     carpetArray: Array<Carpet> = new Array<Carpet>({height: 0, id: 0, imageUrl: "", name: "", width: 0, price: 0, imageUrlFS: ""});
+    selectedItem?: string;
 
-    constructor(private carpetService: CarpetService) {
+    constructor(private auth: AuthService,private cartService: CartService,private carpetService: CarpetService) {
     }
 
     ngOnChanges() {
@@ -29,4 +33,11 @@ export class ShopComponent implements OnInit {
     }
 
 
+    addToCart(item: Carpet) {
+        let currentUser = (JSON.parse(localStorage.getItem('user') as string)['uid']);
+        this.cartService.addToCart(currentUser,item);
+
+        console.log(currentUser);
+        console.log(item);
+    }
 }

@@ -5,6 +5,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {User} from "../../shared/models/user";
 import {UserService} from "../../shared/services/user.service";
+import {CartService} from "../../shared/services/cart.service";
 
 @Component({
     selector: 'app-registration',
@@ -22,7 +23,7 @@ export class RegistrationComponent implements OnInit {
     })
 
 
-    constructor(private router: Router, private auth: AuthService, private location: Location,private userService: UserService) {
+    constructor(private cartService: CartService,private router: Router, private auth: AuthService, private location: Location,private userService: UserService) {
     }
 
     ngOnInit(): void {
@@ -46,6 +47,9 @@ export class RegistrationComponent implements OnInit {
                         }).catch(error =>{
                             console.error(error);
                         });
+                        this.cartService.initCart(user.id).then(_=>{
+                            console.log("cart added");
+                        })
                         this.router.navigateByUrl("/login");
                     })
                     .catch(error => {
