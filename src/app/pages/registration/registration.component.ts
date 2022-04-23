@@ -34,7 +34,6 @@ export class RegistrationComponent implements OnInit {
                 this.auth.register(this.registerForm.value.email, this.registerForm.value.password)
                     .then(cred => {
                         alert("Sikeres regisztracio, kerlek jelentkezz be!");
-                        console.log("Sikeres regisztracio");
                         const user: User = {
                             id: cred.user?.uid as string,
                             lastName: this.registerForm.value.lastName,
@@ -43,12 +42,10 @@ export class RegistrationComponent implements OnInit {
                             phoneNumber: this.registerForm.value.phoneNumber
                         }
                         this.userService.create(user).then(_ =>{
-                            console.log('User added succesfully: ' + user.email);
                         }).catch(error =>{
                             console.error(error);
                         });
                         this.cartService.initCart(user.id).then(_=>{
-                            console.log("cart added");
                         })
                         this.router.navigateByUrl("/login");
                     })
