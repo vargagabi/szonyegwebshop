@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
         if (this.loginForm.valid) {
             this.auth.login(this.loginForm.value.email, this.loginForm.value.password)
                 .then(cred => {
+                    console.log("sikeres bejelentkezes");
                     this.router.navigateByUrl("/main");
                 })
                 .catch(error => {

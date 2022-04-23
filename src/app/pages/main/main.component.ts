@@ -61,6 +61,7 @@ export class MainComponent implements OnInit, OnDestroy {
             }).catch(error => {
                 console.error(error);
             })
+            console.log(comment);
             this.comment.setValue('');
 
         }

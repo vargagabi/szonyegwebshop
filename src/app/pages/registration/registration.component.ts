@@ -33,7 +33,12 @@ export class RegistrationComponent implements OnInit {
         if (this.registerForm.valid && this.registerForm.value.password === this.registerForm.value.passwordRepeat) {
                 this.auth.register(this.registerForm.value.email, this.registerForm.value.password)
                     .then(cred => {
+<<<<<<< HEAD
                         alert("Sikeres regisztráció, kérlek jelentkezz be!");
+=======
+                        alert("Sikeres regisztracio, kerlek jelentkezz be!");
+                        console.log("Sikeres regisztracio");
+>>>>>>> parent of eef92cb (kod tisztitasa)
                         const user: User = {
                             id: cred.user?.uid as string,
                             lastName: this.registerForm.value.lastName,
@@ -42,10 +47,12 @@ export class RegistrationComponent implements OnInit {
                             phoneNumber: this.registerForm.value.phoneNumber
                         }
                         this.userService.create(user).then(_ =>{
+                            console.log('User added succesfully: ' + user.email);
                         }).catch(error =>{
                             console.error(error);
                         });
                         this.cartService.initCart(user.id).then(_=>{
+                            console.log("cart added");
                         })
                         this.router.navigateByUrl("/login");
                     })
