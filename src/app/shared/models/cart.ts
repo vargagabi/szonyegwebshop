@@ -1,6 +1,7 @@
 import {Carpet} from "./carpet";
 
 export interface Cart{
-    id: number,
+    id: string,
+    userID: string,
     items: Array<Carpet>,
 }

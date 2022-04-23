@@ -3,6 +3,7 @@ export interface Carpet{
     name: string,
     width: number,
     height: number,
-    pattern: string,
-    imgUrl: string
+    price: number,
+    imageUrl: string,   //images/carpet1.jgp
+    imageUrlFS: string  //full firestore url
 }

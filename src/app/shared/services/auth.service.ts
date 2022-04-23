@@ -20,7 +20,4 @@ export class AuthService {
     getLoggedInUser(){
         return this.auth.user;
     }
-    deleteCurrentUser(){
-    }
-
 }

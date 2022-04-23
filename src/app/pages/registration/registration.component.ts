@@ -4,6 +4,7 @@ import {Location} from "@angular/common";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {User} from "../../shared/models/user";
+import {UserService} from "../../shared/services/user.service";
 
 @Component({
     selector: 'app-registration',
@@ -21,19 +22,30 @@ export class RegistrationComponent implements OnInit {
     })
 
 
-    constructor(private router: Router, private auth: AuthService, private location: Location) {
+    constructor(private router: Router, private auth: AuthService, private location: Location,private userService: UserService) {
     }
 
     ngOnInit(): void {
     }
 
     onSubmit() {
-        //TODO sikeres bejelentkezes eseten uj oldal ahol koszontjuk a felhasznalot -> @input hasznalata :D
         if (this.registerForm.valid && this.registerForm.value.password === this.registerForm.value.passwordRepeat) {
                 this.auth.register(this.registerForm.value.email, this.registerForm.value.password)
-                    .then(r => {
+                    .then(cred => {
                         alert("Sikeres regisztracio, kerlek jelentkezz be!");
                         console.log("Sikeres regisztracio");
+                        const user: User = {
+                            id: cred.user?.uid as string,
+                            lastName: this.registerForm.value.lastName,
+                            firstName: this.registerForm.value.firstName,
+                            email: this.registerForm.value.email,
+                            phoneNumber: this.registerForm.value.phoneNumber
+                        }
+                        this.userService.create(user).then(_ =>{
+                            console.log('User added succesfully: ' + user.email);
+                        }).catch(error =>{
+                            console.error(error);
+                        });
                         this.router.navigateByUrl("/login");
                     })
                     .catch(error => {
